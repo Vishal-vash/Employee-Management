@@ -1,0 +1,34 @@
+.header{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.globalActions{
+    position: absolute;
+    right: 0;
+    top: -10px;
+}
+
+.form-container{
+    border: 1px solid #ccc;
+    padding: 20px 10px;
+    position: relative;
+}
+
+.form-container form{
+    margin-top: 20px;
+}
+
+.form-container h4{
+    margin: 0;
+}
+
+.actions{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+}
+
+.label{
+    font-size: 85%;
+}

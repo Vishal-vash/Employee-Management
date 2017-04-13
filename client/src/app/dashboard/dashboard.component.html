@@ -1,0 +1,71 @@
+<div class="header">
+    <h3>
+        {{title}}
+    </h3>
+    <div class="globalActions">
+        <button class="btn btn-primary btn-lg" (click)="showEmpForm = true">Add Employee</button>
+    </div>
+</div>
+
+<div class="form-container clearfix" *ngIf="showEmpForm">
+    <h4>Add Employee Details</h4>
+    <div class="actions pull-right row">
+        <button class="btn btn-primary" (click)="addEmployee()">Save</button>
+        <button class="btn btn-danger" (click)="showEmpForm = false">Cancel</button>
+    </div>
+    <form class="form clearfix">
+        <div class="row">
+            <div class="col-md-4">
+                <label>First Name</label>
+                <input type="text" class="form-control" [(ngModel)]="employee.firstName" name="name">
+            </div>
+            <div class="col-md-4">
+                <label>Last Name</label>
+                <input type="text" class="form-control" [(ngModel)]="employee.lastName" name="lname">
+            </div>
+            <div class="col-md-4">
+                <label>Age</label>
+                <input type="text" class="form-control" [(ngModel)]="employee.age" name="age">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Department</label>
+                <input type="text" class="form-control" [(ngModel)]="employee.department" name="department">
+            </div>
+            <div class="col-md-4">
+                <label>Designation</label>
+                <input type="text" class="form-control" [(ngModel)]="employee.designation" name="designation">
+            </div>
+            <div class="col-md-4">
+                <label>Salary</label>
+                <input type="text" class="form-control" [(ngModel)]="employee.salary" name="salary">
+            </div>
+        </div>
+    </form>
+</div>
+
+<hr>
+<div class="employee-container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let employee of employees" >
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>{{employee.firstName}}</h3>
+                    <p>
+                        <span class="label label-success">Designation</span>
+                        {{employee.designation}}
+                    </p>
+                    <p>
+                        <span class="label label-warning">Department</span>
+                        {{employee.department}}
+                    </p>
+                    <p>
+                        <a href="#" class="btn btn-primary" role="button">Full Details</a> 
+                        <a href="#" class="btn btn-danger" role="button" (click)="removeEmployee(employee._id)">Remove Employee</a> 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
